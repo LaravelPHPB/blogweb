@@ -12,4 +12,7 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::apiResource('categories','Api\V1\CategoryController');
+
+Route::prefix('v1')->namespace('Api\V1')->group(function(){
+    Route::apiResource('categories','CategoryController');
+});
